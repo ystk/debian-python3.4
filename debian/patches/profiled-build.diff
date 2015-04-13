@@ -4,7 +4,7 @@ Index: b/Makefile.pre.in
 ===================================================================
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
-@@ -478,7 +478,16 @@ build_all_generate_profile:
+@@ -484,7 +484,16 @@ build_all_generate_profile:
  
  run_profile_task:
  	: # FIXME: can't run for a cross build

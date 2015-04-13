@@ -4,7 +4,7 @@ Index: b/setup.py
 ===================================================================
 --- a/setup.py
 +++ b/setup.py
-@@ -1312,6 +1312,9 @@ class PyBuildExt(build_ext):
+@@ -1320,6 +1320,9 @@ class PyBuildExt(build_ext):
          else:
              missing.append('_curses_panel')
  

@@ -38,7 +38,7 @@ Index: b/Lib/distutils/sysconfig.py
          return os.path.join(prefix, "include", python_dir)
      elif os.name == "nt":
          return os.path.join(prefix, "include")
-@@ -275,6 +278,8 @@ def get_makefile_filename():
+@@ -269,6 +272,8 @@ def get_makefile_filename():
          return os.path.join(_sys_home or project_base, "Makefile")
      lib_dir = get_python_lib(plat_specific=0, standard_lib=1)
      config_file = 'config-{}{}'.format(get_python_version(), build_flags)
@@ -51,7 +51,7 @@ Index: b/Makefile.pre.in
 ===================================================================
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
-@@ -724,6 +724,7 @@ Modules/signalmodule.o: $(srcdir)/Module
+@@ -740,6 +740,7 @@ Modules/signalmodule.o: $(srcdir)/Module
  
  Python/dynload_shlib.o: $(srcdir)/Python/dynload_shlib.c Makefile
  	$(CC) -c $(PY_CORE_CFLAGS) \
@@ -59,7 +59,7 @@ Index: b/Makefile.pre.in
  		-DSOABI='"$(SOABI)"' \
  		-o $@ $(srcdir)/Python/dynload_shlib.c
  
-@@ -735,6 +736,7 @@ Python/dynload_hpux.o: $(srcdir)/Python/
+@@ -751,6 +752,7 @@ Python/dynload_hpux.o: $(srcdir)/Python/
  Python/sysmodule.o: $(srcdir)/Python/sysmodule.c Makefile
  	$(CC) -c $(PY_CORE_CFLAGS) \
  		-DABIFLAGS='"$(ABIFLAGS)"' \
@@ -67,7 +67,7 @@ Index: b/Makefile.pre.in
  		-o $@ $(srcdir)/Python/sysmodule.c
  
  $(IO_OBJS): $(IO_H)
-@@ -1116,7 +1118,7 @@ maninstall:	altmaninstall
+@@ -1132,7 +1134,7 @@ maninstall:	altmaninstall
  	(cd $(DESTDIR)$(MANDIR)/man1; $(LN) -s python$(VERSION).1 python3.1)
  
  # Install the library
@@ -76,7 +76,7 @@ Index: b/Makefile.pre.in
  EXTRAPLATDIR= @EXTRAPLATDIR@
  MACHDEPS=	$(PLATDIR) $(EXTRAPLATDIR)
  XMLLIBSUBDIRS=  xml xml/dom xml/etree xml/parsers xml/sax
-@@ -1257,6 +1259,10 @@ libinstall:	build_all $(srcdir)/Lib/$(PL
+@@ -1273,6 +1275,10 @@ libinstall:	build_all $(srcdir)/Lib/$(PL
  $(srcdir)/Lib/$(PLATDIR):
  	mkdir $(srcdir)/Lib/$(PLATDIR)
  	cp $(srcdir)/Lib/plat-generic/regen $(srcdir)/Lib/$(PLATDIR)/regen
@@ -87,7 +87,7 @@ Index: b/Makefile.pre.in
  	export PATH; PATH="`pwd`:$$PATH"; \
  	export PYTHONPATH; PYTHONPATH="`pwd`/Lib"; \
  	export DYLD_FRAMEWORK_PATH; DYLD_FRAMEWORK_PATH="`pwd`"; \
-@@ -1304,10 +1310,10 @@ inclinstall:
+@@ -1320,10 +1326,10 @@ inclinstall:
  
  # Install the library and miscellaneous stuff needed for extending/embedding
  # This goes into $(exec_prefix)
@@ -131,7 +131,7 @@ Index: b/Python/sysmodule.c
 ===================================================================
 --- a/Python/sysmodule.c
 +++ b/Python/sysmodule.c
-@@ -1595,6 +1595,15 @@ make_impl_info(PyObject *version_info)
+@@ -1603,6 +1603,15 @@ make_impl_info(PyObject *version_info)
      if (res < 0)
          goto error;
  
@@ -151,7 +151,7 @@ Index: b/configure.ac
 ===================================================================
 --- a/configure.ac
 +++ b/configure.ac
-@@ -4098,7 +4098,7 @@ AC_MSG_RESULT($LDVERSION)
+@@ -4115,7 +4115,7 @@ AC_MSG_RESULT($LDVERSION)
  
  dnl define LIBPL after ABIFLAGS and LDVERSION is defined.
  AC_SUBST(PY_ENABLE_SHARED)

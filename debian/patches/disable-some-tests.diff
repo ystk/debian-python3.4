@@ -4,8 +4,8 @@ Index: b/Lib/distutils/tests/test_build_ext.py
 ===================================================================
 --- a/Lib/distutils/tests/test_build_ext.py
 +++ b/Lib/distutils/tests/test_build_ext.py
-@@ -91,6 +91,7 @@
-             build_ext.USER_BASE = self.old_user_base
+@@ -89,6 +89,7 @@ class BuildExtTestCase(TempdirManager,
+         build_ext.USER_BASE = self.old_user_base
          super(BuildExtTestCase, self).tearDown()
  
 +    @unittest.skip('Skipping failing Solaris test')

@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 5.0.51~), @bd_dpkgdev@
   mime-support, netbase, bzip2, python3@bd_qual@,
   net-tools, xvfb, xauth
 Build-Depends-Indep: python-sphinx
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Vcs-Browser: https://code.launchpad.net/~doko/python/pkg@VER@-debian
 Vcs-Bzr: http://bazaar.launchpad.net/~doko/python/pkg@VER@-debian
 XS-Testsuite: autopkgtest

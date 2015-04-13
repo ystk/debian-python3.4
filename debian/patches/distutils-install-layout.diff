@@ -54,7 +54,7 @@ Index: b/Lib/distutils/command/install.py
 ===================================================================
 --- a/Lib/distutils/command/install.py
 +++ b/Lib/distutils/command/install.py
-@@ -50,6 +50,20 @@ INSTALL_SCHEMES = {
+@@ -35,6 +35,20 @@ INSTALL_SCHEMES = {
          'scripts': '$base/bin',
          'data'   : '$base',
          },
@@ -75,7 +75,7 @@ Index: b/Lib/distutils/command/install.py
      'unix_home': {
          'purelib': '$base/lib/python',
          'platlib': '$base/lib/python',
-@@ -146,6 +160,9 @@ class install(Command):
+@@ -131,6 +145,9 @@ class install(Command):
  
          ('record=', None,
           "filename in which to record list of installed files"),
@@ -85,7 +85,7 @@ Index: b/Lib/distutils/command/install.py
          ]
  
      boolean_options = ['compile', 'force', 'skip-build']
-@@ -166,6 +183,7 @@ class install(Command):
+@@ -151,6 +168,7 @@ class install(Command):
          self.exec_prefix = None
          self.home = None
          self.user = 0
@@ -93,7 +93,7 @@ Index: b/Lib/distutils/command/install.py
  
          # These select only the installation base; it's up to the user to
          # specify the installation scheme (currently, that means supplying
-@@ -187,6 +205,9 @@ class install(Command):
+@@ -172,6 +190,9 @@ class install(Command):
          self.install_userbase = USER_BASE
          self.install_usersite = USER_SITE
  
@@ -103,7 +103,7 @@ Index: b/Lib/distutils/command/install.py
          self.compile = None
          self.optimize = None
  
-@@ -426,6 +447,7 @@ class install(Command):
+@@ -411,6 +432,7 @@ class install(Command):
              self.install_base = self.install_platbase = self.home
              self.select_scheme("unix_home")
          else:
@@ -111,7 +111,7 @@ Index: b/Lib/distutils/command/install.py
              if self.prefix is None:
                  if self.exec_prefix is not None:
                      raise DistutilsOptionError(
-@@ -440,7 +462,26 @@ class install(Command):
+@@ -425,7 +447,26 @@ class install(Command):
  
              self.install_base = self.prefix
              self.install_platbase = self.exec_prefix
@@ -250,7 +250,7 @@ Index: b/Lib/pydoc.py
 ===================================================================
 --- a/Lib/pydoc.py
 +++ b/Lib/pydoc.py
-@@ -404,6 +404,7 @@ class Doc:
+@@ -405,6 +405,7 @@ class Doc:
                                   'marshal', 'posix', 'signal', 'sys',
                                   '_thread', 'zipimport') or
               (file.startswith(basedir) and

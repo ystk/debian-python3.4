@@ -1061,6 +1061,7 @@
  _PyCodecInfo_GetIncrementalEncoder@Base @SVER@
  _PyCodec_DecodeText@Base @SVER@
  _PyCodec_EncodeText@Base @SVER@
+ _PyCodec_Forget@Base @SVER@
  _PyCodec_Lookup@Base @SVER@
  _PyCodec_LookupTextEncoding@Base @SVER@
  _PyComplex_FormatAdvancedWriter@Base @SVER@

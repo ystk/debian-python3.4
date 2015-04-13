@@ -6,8 +6,8 @@ Index: b/Lib/locale.py
 ===================================================================
 --- a/Lib/locale.py
 +++ b/Lib/locale.py
-@@ -1222,8 +1222,8 @@
-     'turkish':                              'tr_TR.ISO8859-9',
+@@ -1331,8 +1331,8 @@ locale_alias = {
+     'ug_cn':                                'ug_CN.UTF-8',
      'uk':                                   'uk_UA.KOI8-U',
      'uk_ua':                                'uk_UA.KOI8-U',
 -    'univ':                                 'en_US.utf',
@@ -15,5 +15,5 @@ Index: b/Lib/locale.py
 +    'univ':                                 'en_US.UTF-8',
 +    'universal':                            'en_US.UTF-8',
      'universal.utf8@ucs4':                  'en_US.UTF-8',
+     'unm_us':                               'unm_US.UTF-8',
      'ur':                                   'ur_PK.CP1256',
-     'ur_in':                                'ur_IN.UTF-8',

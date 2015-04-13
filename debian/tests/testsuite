@@ -66,11 +66,15 @@ else
   log=testsuite.log
 fi
 
+# several tests fail with configured proxy; we don't need internet access, so
+# unset proxy variables
+EXTRAENV="env -u https_proxy -u http_proxy -u no_proxy HOME=$tmphome"
+
 script=$debian_dir/script.py
 if [ -f "$script" ]; then
-  cmd="HOME=$tmphome python3.4 $script \"$log\" \"$TESTPYTHON $TESTOPTS $TESTEXCLUSIONS\""
+  cmd="$EXTRAENV python3.4 $script \"$log\" \"$TESTPYTHON $TESTOPTS $TESTEXCLUSIONS\""
 else
-  cmd="HOME=$tmphome $TESTPYTHON $TESTOPTS $TESTEXCLUSIONS"
+  cmd="$EXTRAENV $TESTPYTHON $TESTOPTS $TESTEXCLUSIONS"
 fi
 
 echo "Running the python testsuite with the standard interpreter:"

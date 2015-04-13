@@ -5,7 +5,7 @@ Index: b/Modules/socketmodule.c
 ===================================================================
 --- a/Modules/socketmodule.c
 +++ b/Modules/socketmodule.c
-@@ -6129,9 +6129,11 @@
+@@ -6136,9 +6136,11 @@ PyInit__socket(void)
  #ifdef  SO_OOBINLINE
      PyModule_AddIntMacro(m, SO_OOBINLINE);
  #endif
@@ -21,7 +21,7 @@ Index: b/Modules/posixmodule.c
 ===================================================================
 --- a/Modules/posixmodule.c
 +++ b/Modules/posixmodule.c
-@@ -11724,12 +11724,14 @@
+@@ -11732,12 +11732,14 @@ all_ins(PyObject *m)
  #ifdef O_LARGEFILE
      if (PyModule_AddIntMacro(m, O_LARGEFILE)) return -1;
  #endif
